@@ -181,6 +181,7 @@ public class PushSource implements PushEnabledSource {
   public HttpResponse<String> deleteSecurityIdentity(
       String securityProviderId, SecurityIdentityDelete securityIdentityDelete)
       throws IOException, InterruptedException {
+
     return this.platformClient.deleteSecurityIdentity(securityProviderId, securityIdentityDelete);
   }
 
