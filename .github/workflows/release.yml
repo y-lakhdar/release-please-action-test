@@ -21,3 +21,11 @@ jobs:
       - name: Build Java package
         run: mvn clean package
 
+      - uses: google-github-actions/release-please-action@v3
+        name: Release Java package
+        with:
+          release-type: maven
+          package-name: release-please-action
+          default-branch: main
+          pull-request-title-pattern: 'chore${scope}: release${component} ${version} [skip-ci]'
+          token: ${{ secrets.RELEASE_KEY }}
